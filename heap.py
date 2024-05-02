@@ -57,12 +57,14 @@ class MaxHeap:
 
 
 def find_kth_smallest(nums, k):
-    ###################################
-    ###                             ###
-    ###                             ###
-    ###                             ###
-    ###################################
-
+    max_heap = MaxHeap()
+    for num in nums [:k]:
+        max_heap.insert(num)
+    for num in nums[k:]:
+        if num < max_heap.heap[0]:
+            max_heap.remove()
+            max_heap.insert(num)
+    return max_heap.heap[0]
 
 
 
@@ -110,4 +112,3 @@ for i in range(len(nums)):
     ---------------------------------------
 
 """
-
