@@ -62,7 +62,7 @@ def find_kth_smallest(nums, k):
         max_heap.insert(num)
     for num in nums[k:]:
         if num < max_heap.heap[0]:
-            max_heap.remov()
+            max_heap.remove()
             max_heap.insert(num)
     return max_heap.heap[0]
 
